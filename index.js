@@ -51,7 +51,7 @@ module.exports = {
           var activatedRevisionKey = context.revisionData && context.revisionData.activatedRevisionKey;
 
           if (revisionKey && !activatedRevisionKey) {
-            return "Deployed but did not activate revision " + revisionKey + ". " +
+            return "Deployed but did not activate revision `" + revisionKey + "`. " +
               "To activate, run: ember deploy:activate " + context.deployTarget + " --revision=" + revisionKey + "\n";
           }
         }
@@ -74,7 +74,7 @@ module.exports = {
 
         if (!this.pluginConfig.url) {
           properties.push('host');
-          properties.push('post');
+          properties.push('port');
         }
 
         properties.forEach(this.applyDefaultConfigProperty.bind(this));
