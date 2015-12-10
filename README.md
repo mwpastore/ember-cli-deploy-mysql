@@ -119,8 +119,8 @@ The MySQL password. If [url](#url) is defined, then this option is not needed.
 You can create a `.env.deploy.<environment>` file in your project root to store
 "secrets" like database passwords (e.g. `MYSQL_PASSWORD=bananasplit`) and
 reference these values in your `config/deploy.js` as `process.env.<key>` (e.g.
-`process.env.MYSQL_PASSWORD`).  You should any and all such "secret" files to
-your `.gitignore` to prevent them from being inadvertently checked in!
+`process.env.MYSQL_PASSWORD`).  You should add any and all such "secret" files
+to your `.gitignore` to prevent them from being inadvertently checked in!
 
 ### url
 
