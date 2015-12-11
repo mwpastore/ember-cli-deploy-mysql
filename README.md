@@ -28,7 +28,7 @@ For more information on what plugins are and how they work, please refer to the
 That's a great question.  Redis is a much better solution for this kind of
 problem and you can do neat things like serve directly from NGINX.  MySQL, on
 the other hand, isn't really set up well for key-value storage and retrieval,
-and it ends up being a rather clumsy solution.
+and it ends up being a somewhat clumsy solution.
 
 In our case, we were only using Redis for this particular function, so it
 seemed overkill to be running the service (and maintaining a connection pool to
@@ -157,7 +157,7 @@ your MySQL user will need create table privileges!  Here is the DDL in case you
 want to create it separately, in advance:
 
 ```sql
-CREATE TABLE your_project_name_bootstrap (
+CREATE TABLE `your_project_name_bootstrap` (
   `id` int AUTO_INCREMENT,
   `key` varchar(255) NOT NULL,
   `value` text NOT NULL,
