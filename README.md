@@ -150,10 +150,35 @@ The name of the table to be used to store the revision keys and file contents
 in MySQL.  By default this option will use the `project.name()` property
 from the deployment context.
 
-*Default:* `context.project.name() + '_bootstrap'`
+*Default:* `context.project.name().replace(/-/g, '_') + '_bootstrap'`
 
 The table is created in your database automatically on the initial deploy, so
-your MySQL user will need create table privileges!
+your MySQL user will need create table privileges!  Here is the DDL in case you
+want to create it separately, in advance:
+
+```sql
+CREATE TABLE your_project_name_bootstrap (
+  `id` int AUTO_INCREMENT,
+  `key` varchar(255) NOT NULL,
+  `value` text NOT NULL,
+  `gitsha` binary(20), -- reserved for future use
+  `deployer` varchar(255), -- reserved for future use
+  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `NATURAL` (`key`)
+);
+```
+
+Which should create a table that looks like:
+
+| Field      | Type         | Null | Key | Default           | Extra          |
+| ---------- | ------------ | ---- | --- | ----------------- | -------------- |
+| id         | int(11)      | NO   | PRI | NULL              | auto_increment |
+| key        | varchar(255) | NO   | UNI | NULL              |                |
+| value      | text         | NO   |     | NULL              |                |
+| gitsha     | binary(20)   | YES  |     | NULL              |                |
+| deployer   | varchar(255) | YES  |     | NULL              |                |
+| created_at | timestamp    | NO   |     | CURRENT_TIMESTAMP |                |
 
 ### revisionKey
 
@@ -190,9 +215,6 @@ to MySQL. By default this message will only display if the revision for
 The maximum number of recent revisions to keep in the MySQL table.
 
 *Default:* `10`
-
-*WARNING: If the activated revision is not in the recent revisions, it might be
-deleted. You have been warned!*
 
 ## Activation
 

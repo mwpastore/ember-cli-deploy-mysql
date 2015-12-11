@@ -34,7 +34,7 @@ module.exports = {
         },
         filePattern: 'index.html',
         tableName: function (context) {
-          return context.project.name() + '_bootstrap';
+          return context.project.name().replace(/-/g, '_') + '_bootstrap';
         },
         revisionKey: function (context) {
           return context.commandOptions.revision || (context.revisionData && context.revisionData.revisionKey);
