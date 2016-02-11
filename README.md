@@ -33,10 +33,10 @@ and it ends up being a somewhat clumsy solution.
 In our case, we were only using Redis for this particular function, so it
 seemed overkill to be running the service (and maintaining a connection pool to
 it in our Ruby application).  Also, our API responses (including the Ember.js
-index) are already being cached in MemcacheDB (thanks to an Apache reverse
-proxy and mod_socache), so talk about redundant layers!  It makes more sense
-for us, for now, to serve the index from MySQL and let the proxy cache it in
-MemcacheDB.  Perhaps your situation is similar?
+index) are already being cached (thanks to a caching reverse proxy), so talk
+about redundant layers!  It makes more sense for us, for now, to serve the
+index from MySQL and let our reverse proxy cache it.  Perhaps your situation is
+similar?
 
 ## Quick Start
 
