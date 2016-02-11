@@ -2,7 +2,7 @@
 
 > Deploy your Ember.js index to MySQL
 
-[![npm version](https://badge.fury.io/js/ember-cli-deploy-mysql.svg)](https://badge.fury.io/js/ember-cli-deploy-mysql)[![](https://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/plugins/ember-cli-deploy-mysql.svg)](http://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/)
+[![npm version](https://badge.fury.io/js/ember-cli-deploy-mysql.svg)](https://badge.fury.io/js/ember-cli-deploy-mysql) [![](https://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/plugins/ember-cli-deploy-mysql.svg)](http://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/)
 
 This plugin, lovingly cribbed from [ember-cli-deploy-redis][8], uploads the
 contents of a file, presumably index.html, to a specified MySQL table.  Systems
