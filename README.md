@@ -1,6 +1,6 @@
 # ember-cli-deploy-mysql
 
-> Deploy your Ember.js index to MySQL
+## This plugin is deprecated. Please use [ember-cli-deploy-sql](https://github.com/mwpastore/ember-cli-deploy-sql) instead!
 
 [![npm version](https://badge.fury.io/js/ember-cli-deploy-mysql.svg)](https://badge.fury.io/js/ember-cli-deploy-mysql) [![](https://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/plugins/ember-cli-deploy-mysql.svg)](http://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/)
 
